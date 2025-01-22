@@ -13,9 +13,7 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
       second: '2-digit',
       hour12: true,
     }).format(new Date());
-    console.log(
-      `Time: ${formattedTime}, Method: ${req.method}, originalUrl: ${req.originalUrl}, params: ${JSON.stringify(req.params)}, body: ${JSON.stringify(req.body)}, Latency: ${latency} ms`,
-    );
+    console.log(`Time: ${formattedTime}, Method: ${req.method}, originalUrl: ${req.originalUrl}, params: ${JSON.stringify(req.params)}, body: ${JSON.stringify(req.body)}, Latency: ${latency} ms`);
   });
   next();
 };

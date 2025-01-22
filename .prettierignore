@@ -1,0 +1,5 @@
+dist
+.vscode
+package-lock.json
+.prettierrc
+README.md

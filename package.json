@@ -3,13 +3,16 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "prettier": "^3.4.2"
   },
   "scripts": {
     "dev": "bun --watch src/server.ts",
     "start": "bun run src/server.ts",
     "build": "bun build --entrypoints ./src/server.ts --outdir ./dist",
-    "test": "bun test"
+    "test": "bun test",
+    "prettier": "prettier --write .",
+    "prebuild": "npm run prettier"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
