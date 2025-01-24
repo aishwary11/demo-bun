@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "bun --watch src/server.ts",
     "start": "bun run src/server.ts",
-    "build": "bun build --entrypoints ./src/server.ts --outdir ./dist",
+    "build": "bun build --entrypoints ./src/server.ts --outdir ./dist --minify",
     "test": "bun test",
     "prettier": "prettier --write .",
     "prebuild": "npm run prettier"
