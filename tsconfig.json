@@ -6,11 +6,13 @@
     "module": "ESNext",
     "moduleDetection": "force",
     "allowJs": false,
+    "outDir": "./dist",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./src/*"]
     },
+    "esModuleInterop": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
     "strict": true,

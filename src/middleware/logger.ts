@@ -1,6 +1,7 @@
+import asyncHandler from '@/common/utils/asynchandler';
 import type { NextFunction, Request, Response } from 'express';
 
-const logger = (req: Request, res: Response, next: NextFunction) => {
+const logger = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
   res.on('finish', () => {
     const latency = Date.now() - start;
@@ -16,6 +17,6 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
     console.log(`Time: ${formattedTime}, Method: ${req.method}, originalUrl: ${req.originalUrl}, params: ${JSON.stringify(req.params)}, body: ${JSON.stringify(req.body)}, Latency: ${latency} ms`);
   });
   next();
-};
+});
 
 export default logger;
