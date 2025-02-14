@@ -9,6 +9,7 @@ import { STATUS_CODES } from './common/constant';
 import connectDB from './common/db/config';
 import userRouter from './components/user/user.route';
 import errorMiddleware from './middleware/error.middleware';
+import isAuthenticated from './middleware/isAuthenticated';
 import logger from './middleware/logger';
 import notFound from './middleware/notFound';
 const app: Express = express();
@@ -32,7 +33,7 @@ app.post('/', async (req: Request, res: Response) => {
   }
 });
 app.use('/user', userRouter);
-// app.use(isAuthenticated);
+app.use(isAuthenticated);
 app.use('*', notFound);
 app.use(errorMiddleware);
 
